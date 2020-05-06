@@ -40,8 +40,8 @@ bot.on("message", async msg => { // eslint-disable-line
             .setAuthor(bot.user.tag, bot.user.displayAvatarURL)
             .setDescription(`
 __**Commands List**__
-> \`play\` > **\`play (URL-Name)\`**
-> \`skip\`, \`stop\`,  \`pause\`, \`resume\`
+> \`play Or p\` > **\`play (URL-Name)\`**
+> \`skip Or s\`, \`stop or leave or disconnect\`,  \`pause\`, \`resume\`
 > \`nowplaying\`, \`queue\`, \`volume\``)
             .setFooter("©️ 2020 PildexZ Development", "https://app.zealcord.xyz/assets/Logo.png");
         msg.channel.send(helpembed);
@@ -131,14 +131,14 @@ Please provide a value to select one of the search results ranging from 1-10.
             return handleVideo(video, msg, voiceChannel);
         }
 
-    } else if (command === "skip") {
+    } else if (command === "skip" || command === "s") {
         if (!msg.member.voiceChannel) return msg.channel.send("I'm sorry but you need to be in a voice channel to play a music!");
         if (!serverQueue) return msg.channel.send("There is nothing playing that I could **\`skip\`** for you.");
         serverQueue.connection.dispatcher.end("Skip command has been used!");
         msg.channel.send("⏭️  **|**  Skip command has been used!");
         return undefined;
 
-    } else if (command === "stop") {
+    } else if (command === "stop" || command === "leave" || command === "disconnect") {
         if (!msg.member.voiceChannel) return msg.channel.send("I'm sorry but you need to be in a voice channel to play music!");
         if (!serverQueue) return msg.channel.send("There is nothing playing that I could **\`stop\`** for you.");
         serverQueue.songs = [];
