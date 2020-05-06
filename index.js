@@ -12,7 +12,10 @@ const GOOGLE_API_KEY = process.env.YTAPI_KEY;
 const bot = new Client({
     disableEveryone: true
 });
-
+bot.on('ready') , () =>{
+	console.log('Bot Launched...')
+	bot.setGame(PRIFEX,'help');
+});
 const youtube = new YouTube(GOOGLE_API_KEY);
 const queue = new Map();
 
@@ -21,7 +24,6 @@ bot.on("error", console.error);
 bot.on("ready", () => console.log(`${bot.user.tag} has been successfully turned on!`));
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
 bot.on("reconnecting", () => console.log("I am reconnecting now..."));
-bot.setGame(PRIFEX,'help');
 bot.on("message", async msg => { // eslint-disable-line
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(PREFIX)) return undefined;
