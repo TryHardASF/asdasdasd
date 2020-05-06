@@ -34,14 +34,14 @@ bot.on("message", async msg => { // eslint-disable-line
     let command = msg.content.toLowerCase().split(" ")[0];
     command = command.slice(PREFIX.length);
 
-    if (command === "help" || command == "cmd") {
+    if (command === "help" || command == "h") {
         const helpembed = new Discord.RichEmbed()
             .setColor("#7289DA")
             .setAuthor(bot.user.tag, bot.user.displayAvatarURL)
             .setDescription(`
 __**Commands List**__
-> \`play Or p\` > **\`play (URL-Name)\`**
-> \`skip Or s\`, \`stop or leave or disconnect\`,  \`pause\`, \`resume\`
+> \`play OR p\` > **\`play (URL-Name)\`**
+> \`skip OR s\`, \`stop OR leave OR disconnect\`,  \`pause\`, \`resume\`
 > \`nowplaying\`, \`queue\`, \`volume\``)
             .setFooter("©️ 2020 PildexZ Development", "https://app.zealcord.xyz/assets/Logo.png");
         msg.channel.send(helpembed);
