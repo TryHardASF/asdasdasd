@@ -9,6 +9,8 @@ const TOKEN = process.env.BOT_TOKEN;
 const PREFIX = process.env.PREFIX;
 const GOOGLE_API_KEY = process.env.YTAPI_KEY;
 
+const bot = new Client({
+    disableEveryone: true
 });
 
 const youtube = new YouTube(GOOGLE_API_KEY);
@@ -42,7 +44,7 @@ __**Commands List**__
 > \`search\` > **\`search [title]\`**
 > \`skip\`, \`stop\`,  \`pause\`, \`resume\`
 > \`nowplaying\`, \`queue\`, \`volume\``)
-            .setFooter("©️ 2020 Pildexz Development", "https://app.zealcord.xyz/assets/Logo.png");
+            .setFooter("©️ 2020 PildexZ Development", "https://app.zealcord.xyz/assets/Logo.png");
         msg.channel.send(helpembed);
     }
     if (command === "play" || command === "p") {
@@ -106,9 +108,7 @@ __**Commands List**__
                     let index = 0;
                     msg.channel.send(`
 __**Song selection**__
-
 ${videos.map(video2 => `**\`${++index}\`  |**  ${video2.title}`).join("\n")}
-
 Please provide a value to select one of the search results ranging from 1-10.
 					`);
                     // eslint-disable-next-line max-depth
@@ -163,9 +163,7 @@ Please provide a value to select one of the search results ranging from 1-10.
         if (!serverQueue) return msg.channel.send("There is nothing playing.");
         return msg.channel.send(`
 __**Song Queue**__
-
 ${serverQueue.songs.map(song => `**-** ${song.title}`).join("\n")}
-
 **Now Playing: \`${serverQueue.songs[0].title}\`**
         `);
 
