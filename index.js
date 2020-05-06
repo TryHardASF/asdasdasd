@@ -19,7 +19,7 @@ const queue = new Map();
 bot.on("warn", console.warn);
 bot.on("error", console.error);
 bot.on("ready", () => {console.log(`${bot.user.tag} has been successfully turned on!`)
-      bot.user.setActivity(PREFIX,'help')});
+      bot.user.setActivity('CHANGE PREFIX HERE')});
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
 bot.on("reconnecting", () => console.log("I am reconnecting now..."));
 bot.on("message", async msg => { // eslint-disable-line
@@ -40,8 +40,7 @@ bot.on("message", async msg => { // eslint-disable-line
             .setAuthor(bot.user.tag, bot.user.displayAvatarURL)
             .setDescription(`
 __**Commands List**__
-> \`play\` > **\`play [title/url]\`**
-> \`search\` > **\`search [title]\`**
+> \`play\` > **\`play (URL-Name)\`**
 > \`skip\`, \`stop\`,  \`pause\`, \`resume\`
 > \`nowplaying\`, \`queue\`, \`volume\``)
             .setFooter("©️ 2020 PildexZ Development", "https://app.zealcord.xyz/assets/Logo.png");
