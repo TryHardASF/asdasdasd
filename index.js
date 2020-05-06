@@ -10,7 +10,7 @@ const PREFIX = process.env.PREFIX;
 const GOOGLE_API_KEY = process.env.YTAPI_KEY;
 @client.event
 async def on_ready():
-	activity = discord.Game(name="PREFIX help")
+	activity = discord.Game(name= process.env.PREFIX"help")
 	await client.change_presence(status=discord.Status.online, activity=activity)
 const bot = new Client({
     disableEveryone: true
