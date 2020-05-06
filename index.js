@@ -8,7 +8,10 @@ require("./server.js");
 const TOKEN = process.env.BOT_TOKEN;
 const PREFIX = process.env.PREFIX;
 const GOOGLE_API_KEY = process.env.YTAPI_KEY;
-
+@client.event
+async def on_ready():
+	activity = discord.Game(name="PREFIX help")
+	await client.change_presence(status=discord.Status.online, activity=activity)
 const bot = new Client({
     disableEveryone: true
 });
@@ -44,7 +47,7 @@ __**Commands List**__
 > \`search\` > **\`search [title]\`**
 > \`skip\`, \`stop\`,  \`pause\`, \`resume\`
 > \`nowplaying\`, \`queue\`, \`volume\``)
-            .setFooter("©️ 2020 Zealcord Development", "https://app.zealcord.xyz/assets/Logo.png");
+            .setFooter("©️ 2020 Pildexz Development", "https://app.zealcord.xyz/assets/Logo.png");
         msg.channel.send(helpembed);
     }
     if (command === "play" || command === "p") {
