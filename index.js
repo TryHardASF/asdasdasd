@@ -21,7 +21,7 @@ bot.on("error", console.error);
 bot.on("ready", () => console.log(`${bot.user.tag} has been successfully turned on!`));
 bot.on("disconnect", () => console.log("An error occurred, trying to reconnect!"));
 bot.on("reconnecting", () => console.log("I am reconnecting now..."));
-bot.user.setActivity(PREFIX,'Help');
+bot.setActivity(PREFIX,'Help');
 bot.on("message", async msg => { // eslint-disable-line
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(PREFIX)) return undefined;
