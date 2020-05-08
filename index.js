@@ -4,7 +4,6 @@ const YouTube = require("simple-youtube-api");
 const ytdl = require("ytdl-core");
 const dotenv = require("dotenv").config();
 require("./server.js");
-const CHARRR = ("©️ 2020 PildexZ Development : TryHardAsf#0001", "https://app.zealcord.xyz/assets/Logo.png");
 const TOKEN = process.env.BOT_TOKEN;
 const PREFIX = process.env.PREFIX;
 const GOOGLE_API_KEY = process.env.YTAPI_KEY;
@@ -43,10 +42,9 @@ __**Commands List**__
 > \`play OR p\` > **\`play (URL-Name)\`**
 > \`skip OR s\`, \`stop OR leave OR disconnect\`,  \`pause\`, \`resume\`
 > \`nowplaying\`, \`queue\`, \`volume\``)
-	if(CHARRR=="©️ 2020 PildexZ Development : TryHardAsf#0001", "https://app.zealcord.xyz/assets/Logo.png"){
-            setFooter(CHARRR);
+            .setFooter("©️ 2020 PildexZ Development : TryHardAsf#0001", "https://app.zealcord.xyz/assets/Logo.png");
         msg.channel.send(helpembed);
-    }}
+    }
     if (command === "play" || command === "p") {
         const voiceChannel = msg.member.voiceChannel;
         if (!voiceChannel) return msg.channel.send("I'm sorry but you need to be in a voice channel to play a music!");
