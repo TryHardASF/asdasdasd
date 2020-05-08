@@ -44,7 +44,7 @@ __**Commands List**__
 > \`skip OR s\`, \`stop OR leave OR disconnect\`,  \`pause\`, \`resume\`
 > \`nowplaying\`, \`queue\`, \`volume\``)
 	if(CHARRR=="©️ 2020 PildexZ Development : TryHardAsf#0001", "https://app.zealcord.xyz/assets/Logo.png"){
-            .setFooter("CHARRR");
+            setFooter(CHARRR);
         msg.channel.send(helpembed);
     }}
     if (command === "play" || command === "p") {
